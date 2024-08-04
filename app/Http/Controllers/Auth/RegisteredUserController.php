@@ -15,6 +15,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Validator;
 
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -56,8 +57,9 @@ class RegisteredUserController extends Controller
         ]);
         
         $user->roles()->attach(3);;
+        
 
-       
+        notify()->success('Pendaftaran berhasil , silahkan login !');
 
         event(new Registered($user));
 

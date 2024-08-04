@@ -50,6 +50,8 @@
 </head>
 
 <body>
+
+
     <div class="sidebar sidebar-fixed border-end" id="sidebar">
 
         @include('layouts.sidebar')
