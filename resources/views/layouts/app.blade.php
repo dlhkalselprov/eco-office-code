@@ -10,7 +10,7 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,SCSS,HTML,RWD,Dashboard">
 
     <title>Eco - Office | {{ $title }}</title>
-
+    @notifyCss
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -51,10 +51,11 @@
 
 <body>
 
-
     <div class="sidebar sidebar-fixed border-end" id="sidebar">
 
-        @include('layouts.sidebar')
+        {{-- @include('layouts.sidebar') --}}
+        <x-notify::notify />
+        {{ $sidebar }}
 
     </div>
     {{-- @include('layouts.sidebar-light') --}}
@@ -104,7 +105,9 @@
     <main>
         {{ $slot }}
     </main> --}}
+
     @include('layouts.script')
+    @notifyJs
 
 </body>
 

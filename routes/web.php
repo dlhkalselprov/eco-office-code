@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    });
+    // Route::get('/', function () {
+    //     return view('layouts.template');
+    // });
 
     Route::middleware('role:superadmin')->group(function () {
     
@@ -39,8 +39,20 @@ Route::middleware('auth')->group(function () {
 
    
  
-    Route::middleware('role:suser')->group(function () {
-    
+    Route::middleware('role:user')->group(function () {
+        Route::get('/', [Controllers\UserController::class, 'index'])->name('user.index');
+        
+        Route::get('/profile-user', [Controllers\ProfileController::class, 'index'])->name('profile-user.index');
+        Route::get('/profile-edit', [Controllers\ProfileController::class, 'edit'])->name('profile-edit.edit');
+        Route::put('/profile-update', [Controllers\ProfileController::class, 'update'])->name('profile-edit.update');
+        // Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+        
+        Route::get('/input-data', [Controllers\ProfileController::class, 'index'])->name('input-data.index');
+        
+        // Route::get('/input-data', [Controllers\ProfileController::class, 'edit'])->name('input-data.edit');
+        Route::patch('/input-data', [Controllers\ProfileController::class, 'update'])->name('input-data.update');
+        Route::delete('/input-data', [Controllers\ProfileController::class, 'destroy'])->name('input-data.destroy');
+          
     });
  
 
