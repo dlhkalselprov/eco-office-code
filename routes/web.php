@@ -8,26 +8,42 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     });
-    Route::middleware(HasRoleAdminMiddleware::class)->group(function()
-    {
 
+    Route::middleware('role:superadmin')->group(function () {
+    
     });
     
-    Route::get('/profile', [Controllers\ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::middleware('role:admin')->group(function () {
+
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
+    
+        Route::get('/profile', [Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+        Route::resource('daftar-peserta', Controllers\DaftarPesertaCont::class);
+        Route::resource('proses-penilaian', Controllers\ProsesPenilaianCont::class);
+        Route::resource('hasil-penilaian', Controllers\HasilPenilaianCont::class);
+        
+    });
+
    
-    Route::resource('daftar-peserta', Controllers\DaftarPesertaCont::class);
-    Route::resource('proses-penilaian', Controllers\ProsesPenilaianCont::class);
-    Route::resource('hasil-penilaian', Controllers\HasilPenilaianCont::class);
+ 
+    Route::middleware('role:suser')->group(function () {
+    
+    });
+ 
+
     
 });
 

@@ -10,11 +10,16 @@ class Role extends Model
 {
 
     protected $fillable = ['name'];
-    public function users(): BelongsToMany
+    // public function users(): BelongsToMany
   
+    // {
+    //     return $this->belongsToMany(User::class, 'user_role', 'user_id', 'role_id')->withTimestamps();
+    // }
+    public function users()
     {
-        return $this->belongsToMany(User::class, 'user_role', 'user_id', 'role_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'user_role');
     }
 
+    
     
 }
