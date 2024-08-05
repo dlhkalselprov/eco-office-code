@@ -14,7 +14,7 @@
         </li>
     </x-slot>
 
-    <form method="POST" action="{{ route('profile-edit.update') }}">
+    <form method="POST" action="{{ route('profile-edit.update') }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -225,21 +225,42 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-
+                    <div class="card-header" data-coreui-i18n="trafficAndSales">Unggah Foto Instansi </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Default file input example</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <label for="formFile" class="form-label">Masukkan Foto Pertama</label>
+                            <input name="photo_1" class="form-control" type="file" id="formFile">
+                            @error('photo_1')
+                                <div>{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Masukkan Foto Kedua</label>
+                            <input name="photo_2" class="form-control" type="file" id="formFile">
+                            @error('photo_2')
+                                <div>{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Masukkan Foto Ketiga</label>
+                            <input name="photo_3" class="form-control" type="file" id="formFile">
+                            @error('photo_3')
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card my-3">
-            <div class="card-footer text-body-secondary text-center">
-                <button type="submit" class="btn btn-sm btn-outline-success">SIMPAN</button>
+
+        <div class="row my-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-footer text-body-secondary text-center">
+                        <button type="submit" class="btn btn-sm btn-outline-success">SIMPAN</button>
+                    </div>
+                </div>
             </div>
         </div>
 

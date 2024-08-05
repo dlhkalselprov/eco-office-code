@@ -100,14 +100,14 @@
                     <input type="submit" value="DAFTAR">
 
                 </form>
-                <h1>Sudah Punya Akun ? <a href="{{ route('login') }}"> Login Sekarang!</a></h1>
+                <p>Sudah Punya Akun ? <a href="{{ route('login') }}"> Login Sekarang!</a></p>
 
             </div>
         </div>
         <!-- copyright -->
         <div class="colorlibcopy-agile">
-            <h1>© 2024 Dinas Lingkungan Hidup Prov. Kalsel | Design by <a href="https://colorlib.com/"
-                    target="_blank">Colorlib</a></h1>
+            <p>© 2024 Dinas Lingkungan Hidup Prov. Kalsel | Design by <a href="https://colorlib.com/"
+                    target="_blank">Colorlib</a></p>
         </div>
         <!-- //copyright -->
         <ul class="colorlib-bubbles">

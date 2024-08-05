@@ -143,7 +143,67 @@
                 <div class="card-header" data-coreui-i18n="trafficAndSales">Foto Instansi </div>
 
                 <div class="card-body">
-                    <img src="..." class="card-img-top" alt="...">
+                    <div id="carouselExampleControls" class="carousel slide" data-coreui-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                @if ($photo->photo_1)
+                                    <img src="{{ asset('assets/images/photos/' . $photo->photo_1) }}"
+                                        class="d-block w-100">
+                                @else
+                                    <svg class="docs-placeholder-img docs-placeholder-img-lg d-block w-100"
+                                        width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img"
+                                        aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice"
+                                        focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%"
+                                            fill="#333" dy=".3em">Masukkan Foto Pertama</text>
+                                    </svg>
+                                @endif
+                            </div>
+                            <div class="carousel-item">
+                                @if ($photo->photo_2)
+                                    <img src="{{ asset('assets/images/photos/' . $photo->photo_2) }}"
+                                        class="d-block w-100">
+                                @else
+                                    <svg class="docs-placeholder-img docs-placeholder-img-lg d-block w-100"
+                                        width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                                        role="img" aria-label="Placeholder: Third slide"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#555"></rect><text x="50%"
+                                            y="50%" fill="#333" dy=".3em">Masukkan Foto Kedua</text>
+                                    </svg>
+                                @endif
+
+                            </div>
+                            <div class="carousel-item">
+                                @if ($photo->photo_3)
+                                    <img src="{{ asset('assets/images/photos/' . $photo->photo_3) }}"
+                                        class="d-block w-100">
+                                @else
+                                    <svg class="docs-placeholder-img docs-placeholder-img-lg d-block w-100"
+                                        width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                                        role="img" aria-label="Placeholder: Third slide"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#555"></rect><text x="50%"
+                                            y="50%" fill="#333" dy=".3em">Masukkan Foto Ketiga</text>
+                                    </svg>
+                                @endif
+
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            data-coreui-target="#carouselExampleControls" data-coreui-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            data-coreui-target="#carouselExampleControls" data-coreui-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
 
                 </div>
             </div>
@@ -152,7 +212,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row my-3">
         <div class="col">
             <div class="card mb-3">
                 <div class="card-footer text-body-secondary text-center">

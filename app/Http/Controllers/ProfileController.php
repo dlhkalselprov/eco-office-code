@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Photo;
+use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
@@ -29,10 +31,12 @@ class ProfileController extends Controller
         $no_pic = $user->no_pic;
         $email = $user->email;
         $created_at = $user->created_at;
+
+        $photo = Photo::where('user_id', Auth::id())->first();
+
+
         
-       
-    
-        return view('profile.index', compact('user'));
+        return view('profile.index', compact('user','photo'));
       
         
     }
@@ -49,7 +53,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request): RedirectResponse
     {
-        $id =  $user = Auth::user()->id;
+        $id = Auth::id();
         $validator = Validator::make($request->all(), 
         [
             'nama_instansi' => ['required', 'string', 'max:255'],
@@ -82,6 +86,49 @@ class ProfileController extends Controller
         // $data->updated_at = timestamps();
         $data->update();
         // $request->user()->save();
+
+        $request->validate([
+            'photo_1' => 'nullable|image|mimes:jpeg,png,jpg|max:18000',
+            'photo_2' => 'nullable|image|mimes:jpeg,png,jpg|max:18000',
+            'photo_3' => 'nullable|image|mimes:jpeg,png,jpg|max:18000',
+        ]);
+
+        $photos = Photo::firstOrNew(['user_id' => $id]);
+        
+        // Fungsi untuk menghapus foto yang sudah ada
+        function deleteOldPhoto($photoPath) {
+            if ($photoPath && File::exists(public_path('assets/images/photos') . '/' . $photoPath)) {
+                File::delete(public_path('assets/images/photos') . '/' . $photoPath);
+            }
+        }
+
+        if ($request->hasFile('photo_1')) {
+            deleteOldPhoto($photos->photo_1);
+            $file = $request->file('photo_1');
+            $fileName = time() . '_1.' . '_' . $file->getClientOriginalName();
+            $request->photo_1->move(public_path('assets/images/photos'), $fileName);
+            $photos->photo_1 = $fileName;
+        }
+
+        if ($request->hasFile('photo_2')) {
+            deleteOldPhoto($photos->photo_2);
+            $file = $request->file('photo_2');
+            $fileName = time() . '_2.' . '_' . $file->getClientOriginalName();
+            $request->photo_2->move(public_path('assets/images/photos'), $fileName);
+            $photos->photo_2 = $fileName;
+        }
+
+        if ($request->hasFile('photo_3')) {
+            deleteOldPhoto($photos->photo_3);
+            $file = $request->file('photo_3');
+            $fileName = time() . '_3.' . '_' . $file->getClientOriginalName();
+            $request->photo_3->move(public_path('assets/images/photos'), $fileName);
+            $photos->photo_3 = $fileName;
+        }
+
+        $photos->save();
+
+
         
         notify()->success('Berhasil menyimpan perubahan data');
 

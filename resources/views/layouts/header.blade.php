@@ -23,78 +23,33 @@
         </li>
         <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#"
                 role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg"
-                        alt="user@email.com"></div>
+                <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/user.png" alt="user@email.com">
+                </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold rounded-top mb-2"
                     data-coreui-i18n="account">Account</div><a class="dropdown-item" href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
-                    </svg><span data-coreui-i18n="updates">Updates</span><span
-                        class="badge badge-sm bg-info-gradient ms-2">42</span></a><a class="dropdown-item"
-                    href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open">
-                        </use>
-                    </svg><span data-coreui-i18n="messages">Messages</span><span
-                        class="badge badge-sm badge-sm bg-success ms-2">42</span></a><a class="dropdown-item"
-                    href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-task"></use>
-                    </svg><span data-coreui-i18n="tasks">Tasks</span><span
-                        class="badge badge-sm bg-danger-gradient ms-2">42</span></a><a class="dropdown-item"
-                    href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-comment-square">
-                        </use>
-                    </svg><span data-coreui-i18n="comments">Comments</span><span
-                        class="badge badge-sm bg-warning-gradient ms-2">42</span>
-                </a>
-                <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold my-2"
-                    data-coreui-i18n="settings">Settings</div>
-                <a class="dropdown-item" href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
-                    </svg><span data-coreui-i18n="profile">Profile</span>
-                </a>
-                <a class="dropdown-item" href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-settings"></use>
-                    </svg><span data-coreui-i18n="settings">Settings</span>
-                </a>
-                <a class="dropdown-item" href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-credit-card">
-                        </use>
-                    </svg><span data-coreui-i18n="payments">Payments</span><span
-                        class="badge badge-sm bg-secondary-gradient text-dark ms-2">42</span>
-                </a>
-                <a class="dropdown-item" href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-file"></use>
-                    </svg><span data-coreui-i18n="projects">Projects</span><span
-                        class="badge badge-sm bg-primary-gradient ms-2">42</span>
-                </a>
-                <div class="dropdown-divider">
-                </div>
-                <a class="dropdown-item" href="#">
-                    <svg class="icon me-2">
-                        <use href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked">
-                        </use>
-                    </svg><span data-coreui-i18n="lockAccount">Lock Account</span>
-                </a>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <a class="dropdown-item" href="#"
-                        onclick="event.preventDefault();
-                    this.closest('form').submit();">
+
+                    <a class="dropdown-item" href="{{ route('profile-user.index') }}">
                         <svg class="icon me-2">
-                            <use href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout">
-                            </use>
-                        </svg><span data-coreui-i18n="logout">Logout</span>
+                            <use href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                        </svg><span data-coreui-i18n="profile">Profile</span>
                     </a>
-                </form>
+
+                    <div class="dropdown-divider">
+                    </div>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="dropdown-item" href="#"
+                            onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                            <svg class="icon me-2">
+                                <use href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout">
+                                </use>
+                            </svg><span data-coreui-i18n="logout">Logout</span>
+                        </a>
+                    </form>
 
 
 
