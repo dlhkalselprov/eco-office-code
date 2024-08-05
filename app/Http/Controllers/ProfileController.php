@@ -32,7 +32,7 @@ class ProfileController extends Controller
         $email = $user->email;
         $created_at = $user->created_at;
 
-        $photo = Photo::where('user_id', Auth::id())->first();
+        $photo = Photo::where('user_id', 4)->first();
 
 
         

@@ -146,7 +146,7 @@
                     <div id="carouselExampleControls" class="carousel slide" data-coreui-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                @if ($photo->photo_1)
+                                @if ($photo && $photo->photo_1)
                                     <img src="{{ asset('assets/images/photos/' . $photo->photo_1) }}"
                                         class="d-block w-100">
                                 @else
@@ -161,7 +161,7 @@
                                 @endif
                             </div>
                             <div class="carousel-item">
-                                @if ($photo->photo_2)
+                                @if ($photo && $photo->photo_2)
                                     <img src="{{ asset('assets/images/photos/' . $photo->photo_2) }}"
                                         class="d-block w-100">
                                 @else
@@ -177,7 +177,7 @@
 
                             </div>
                             <div class="carousel-item">
-                                @if ($photo->photo_3)
+                                @if ($photo && $photo->photo_3)
                                     <img src="{{ asset('assets/images/photos/' . $photo->photo_3) }}"
                                         class="d-block w-100">
                                 @else
