@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/profile-update', [Controllers\ProfileController::class, 'update'])->name('profile-edit.update');
         // Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
         
-        Route::get('/input-data', [Controllers\ProfileController::class, 'index'])->name('input-data.index');
+        Route::get('/input-data', [Controllers\InputNilaiCont::class, 'index'])->name('input-data.index');
         
         // Route::get('/input-data', [Controllers\ProfileController::class, 'edit'])->name('input-data.edit');
         Route::patch('/input-data', [Controllers\ProfileController::class, 'update'])->name('input-data.update');
