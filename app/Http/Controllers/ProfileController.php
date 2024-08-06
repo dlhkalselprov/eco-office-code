@@ -88,9 +88,9 @@ class ProfileController extends Controller
         // $request->user()->save();
 
         $request->validate([
-            'photo_1' => 'nullable|image|mimes:jpeg,png,jpg|max:18000',
-            'photo_2' => 'nullable|image|mimes:jpeg,png,jpg|max:18000',
-            'photo_3' => 'nullable|image|mimes:jpeg,png,jpg|max:18000',
+            'photo_1' => 'nullable|image|mimes:jpeg,png,jpg,JPG,PNG|max:18000',
+            'photo_2' => 'nullable|image|mimes:jpeg,png,jpg,JPG,PNG|max:18000',
+            'photo_3' => 'nullable|image|mimes:jpeg,png,jpg,JPG,PNG|max:18000',
         ]);
 
         $photos = Photo::firstOrNew(['user_id' => $id]);
