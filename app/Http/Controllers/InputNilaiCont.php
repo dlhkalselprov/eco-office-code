@@ -22,7 +22,8 @@ class InputNilaiCont extends Controller
             $lampiran = InputNilai::firstOrNew(['user_id' => $user->id]);
             return view('input_nilai.index', compact('user','score','lampiran'));
         } else {
-            return view('input_nilai.index', compact('user'));
+            $lampiran = InputNilai::firstOrNew(['user_id' => $user->id]);
+            return view('input_nilai.index', compact('user','lampiran'));
             
         }
   
