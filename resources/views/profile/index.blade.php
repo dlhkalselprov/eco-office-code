@@ -161,7 +161,7 @@
                                 @endif
                             </div>
                             <div class="carousel-item">
-                                @if ($photo->photo_2)
+                                @if ($photo && $photo->photo_2)
                                     <img src="{{ asset('assets/images/photos/' . $photo->photo_2) }}"
                                         class="d-block w-100">
                                 @else

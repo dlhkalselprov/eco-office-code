@@ -9,6 +9,7 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,SCSS,HTML,RWD,Dashboard">
 
+
     <title>Eco - Office | {{ $title }}</title>
     @notifyCss
     <!-- Fonts -->

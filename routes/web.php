@@ -48,11 +48,11 @@ Route::middleware('auth')->group(function () {
         // Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
         
         Route::get('/input-data', [Controllers\InputNilaiCont::class, 'index'])->name('input-data.index');
+        Route::put('/input-data', [Controllers\InputNilaiCont::class, 'update'])->name('input-data.update');
+        Route::delete('/input-data/{filename}', [Controllers\InputNilaiCont::class, 'delete'])->name('input-data.delete');
         
-        // Route::get('/input-data', [Controllers\ProfileController::class, 'edit'])->name('input-data.edit');
-        Route::patch('/input-data', [Controllers\ProfileController::class, 'update'])->name('input-data.update');
-        Route::delete('/input-data', [Controllers\ProfileController::class, 'destroy'])->name('input-data.destroy');
-          
+        
+        
     });
  
 

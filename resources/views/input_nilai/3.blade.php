@@ -28,14 +28,16 @@
 
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_1" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_1', $score->ck3_a_1 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_1" value="{{ old('txt3_a_1', $score->txt3_a_1 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -44,14 +46,16 @@
 
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_2" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_2', $score->ck3_a_2 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_2" value="{{ old('txt3_a_2', $score->txt3_a_2 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -60,14 +64,16 @@
 
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_3" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_3', $score->ck3_a_3 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_3" value="{{ old('txt3_a_3', $score->txt3_a_3 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -76,14 +82,16 @@
 
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_4" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_4', $score->ck3_a_4 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_4" value="{{ old('txt3_a_4', $score->txt3_a_4 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -91,14 +99,16 @@
                      <td>5. Kampanye hemat listrik</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_5" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_5', $score->ck3_a_5 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_5" value="{{ old('txt3_a_5', $score->txt3_a_5 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -106,14 +116,16 @@
                      <td>6. SOP hemat energi</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_6" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_6', $score->ck3_a_6 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_6" value="{{ old('txt3_a_6', $score->txt3_a_6 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -121,14 +133,17 @@
                      <td>7. Penanggung jawab</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_7" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_7', $score->ck3_a_7 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_7"
+                             value="{{ old('txt3_a_7', $score->txt3_a_7 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -136,14 +151,17 @@
                      <td>8. Evaluasi penggunaan listrik</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_a_8" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_a_8', $score->ck3_a_8 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_a_8"
+                             value="{{ old('txt3_a_8', $score->txt3_a_8 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <thead class="table-warning">
@@ -157,14 +175,17 @@
                      <td>1. Peralatan saniter hemat air</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_1" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_1', $score->ck3_b_1 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_1"
+                             value="{{ old('txt3_b_1', $score->txt3_b_1 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -172,14 +193,17 @@
                      <td>2. Ditemukan pipa/kran bocor</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_2" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_2', $score->ck3_b_2 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_2"
+                             value="{{ old('txt3_b_2', $score->txt3_b_2 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -187,14 +211,17 @@
                      <td>3. SOP hemat air</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_3" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_3', $score->ck3_b_3 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_3"
+                             value="{{ old('txt3_b_3', $score->txt3_b_3 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -202,14 +229,17 @@
                      <td>4. Pemanfaatan kembali/IPAL</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_4" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_4', $score->ck3_b_4 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_4"
+                             value="{{ old('txt3_b_4', $score->txt3_b_4 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -217,14 +247,17 @@
                      <td>5. Kampanye hemat air</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_5" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_5', $score->ck3_b_5 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_5"
+                             value="{{ old('txt3_b_5', $score->txt3_b_5 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -232,14 +265,17 @@
                      <td>6. Penanggung jawab</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_6" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_6', $score->ck3_b_6 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_6"
+                             value="{{ old('txt3_b_6', $score->txt3_b_6 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <tr>
@@ -247,14 +283,17 @@
                      <td>7. Evaluasi penggunaan air</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_b_7" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_b_7', $score->ck3_b_7 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_b_7"
+                             value="{{ old('txt3_b_7', $score->txt3_b_7 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
                  <thead class="table-warning">
@@ -268,14 +307,17 @@
                      <td>1. Melakukan pengecekan kendaraan dinas/operasional kantor terkait uji emisi</td>
                      <td>
                          <div class="form-check">
-                             <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                 id="flexCheckDefault">
+                             <input value="true" name="ck3_c_1" class="form-check-input" type="checkbox"
+                                 id="flexCheckDefault"
+                                 {{ old('ck3_c_1', $score->ck3_c_1 ?? null) == 'true' ? 'checked' : '' }}>
                              <label class="form-check-label" for="flexCheckDefault">
                                  YA
                              </label>
                          </div>
                      </td>
-                     <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                     <td><input type="text" name="txt3_c_1"
+                             value="{{ old('txt3_c_1', $score->txt3_c_1 ?? null) }}"
+                             class="form-control form-control-sm">
                      </td>
                  </tr>
 

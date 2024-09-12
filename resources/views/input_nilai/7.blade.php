@@ -23,14 +23,16 @@
                              ruangan kantor</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck7_1" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck7_1', $score->ck7_1 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt7_1" value="{{ old('txt7_1', $score->txt7_1 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                      <tr>
@@ -38,14 +40,16 @@
                          <td>Terdapat denah ruangan kantor/bangunan sebagai sarana upaya evakuasi</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck7_2" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck7_2', $score->ck7_2 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt7_2" value="{{ old('txt7_2', $score->txt7_2 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                      <tr>
@@ -53,14 +57,16 @@
                          <td>Ketersediaan fasilitas APAR serta pengecekan rutin dan pelatihan penggunaannya</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck7_3" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck7_3', $score->ck7_3 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt7_3" value="{{ old('txt7_3', $score->txt7_3 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                      <tr>
@@ -68,14 +74,16 @@
                          <td>Pemeliharaan dan pengecekan keamanan ruang panel kantor</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck7_4" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck7_4', $score->ck7_4 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt7_4" value="{{ old('txt7_4', $score->txt7_4 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
 

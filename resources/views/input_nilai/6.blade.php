@@ -23,14 +23,16 @@
                          <td>Pengadaan barang/peralatan kantor berorientasi ramah lingkungan</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck6_1" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck6_1', $score->ck6_1 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt6_1" value="{{ old('txt6_1', $score->txt6_1 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
 

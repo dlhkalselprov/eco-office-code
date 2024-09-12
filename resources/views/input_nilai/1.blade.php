@@ -24,14 +24,16 @@
                              kerja yang dipimpin</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.1" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck1_1" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck1_1', $score->ck1_1 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.1" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt1_1" value="{{ old('txt1_1', $score->txt1_1 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                      <tr>
@@ -40,14 +42,16 @@
                          <td>Sosialisasi terkait Kebijakan Lingkungan yang diterbitkan</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.2" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck1_2" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck1_2', $score->ck1_2 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.2" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt1_2" value="{{ old('txt1_2', $score->txt1_2 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                      <tr>
@@ -55,28 +59,32 @@
                          <td>Satgas/Tim Penanggung Jawab</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.3" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck1_3" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck1_3', $score->ck1_3 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.3" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt1_3" value="{{ old('txt1_3', $score->txt1_3 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      <tr>
                          <th scope="row">4</th>
                          <td>SOP pelaksanaan kebijakan lingkungan</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.3" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck1_4" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck1_4', $score->ck1_4 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.3" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt1_4" value="{{ old('txt1_4', $score->txt1_4 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                      <tr>
@@ -84,14 +92,16 @@
                          <td>Alokasi anggaran</td>
                          <td>
                              <div class="form-check">
-                                 <input value="" name="ck1.3" class="form-check-input" type="checkbox"
-                                     id="flexCheckDefault">
+                                 <input value="true" name="ck1_5" class="form-check-input" type="checkbox"
+                                     id="flexCheckDefault"
+                                     {{ old('ck1_5', $score->ck1_5 ?? null) == 'true' ? 'checked' : '' }}>
                                  <label class="form-check-label" for="flexCheckDefault">
                                      YA
                                  </label>
                              </div>
                          </td>
-                         <td><input type="text" name="#1.3" value="" class="form-control form-control-sm">
+                         <td><input type="text" name="txt1_5" value="{{ old('txt1_5', $score->txt1_5 ?? null) }}"
+                                 class="form-control form-control-sm">
                          </td>
                      </tr>
                  </tbody>
