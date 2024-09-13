@@ -86,27 +86,25 @@ class InputNilaiCont extends Controller
  
     }
 
-    public function delete($filename){
+    public function destroy($filename)
+    {
 
-    //   dd($filename);
       
-        $user = Auth::user();
-        $file_path = storage_path('asset/lampiran/'.$filename);
-
-        if (file_exists($file_path)) {
-            // Hapus file dari storage
-            unlink($file_path);
-
-        $value = [
-            'lampiran' => null,
-        ];
       
-        $data = InputNilai::where('user_id', $user->id)->first();
-        $data->update($value);
-        
-            return back()->with('success', 'File berhasil dihapus.');
+        $id = Auth::id();
+        function deleteOldFile($filename) {
+            if ($filename && File::exists(public_path('assets/lampiran') . '/' . $filename)) {
+                File::delete(public_path('assets/lampiran') . '/' . $filename);
+            }
         }
-
-        return back()->withErrors(['file' => 'File tidak ditemukan.']);
+        deleteOldFile($filename);
+      
+      
+        $data = InputNilai::where('user_id', $id)->first();
+        $data->update(['lampiran' => null ]);
+       
+        
+        return back()->with('success', 'File berhasil dihapus.');
+      
     }
 }

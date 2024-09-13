@@ -15,27 +15,7 @@
           }
       });
   </script>
-  <script>
-      function deleteFile(filename) {
-          let token = $("meta[name='csrf-token']").attr("content");
-          if (confirm('Apakah Anda yakin ingin menghapus file ini?')) {
-              $.ajax({
-                  url: '/input-data/' + filename,
-                  type: 'DELETE',
-                  data: {
-                      "_token": token
-                  },
-                  success: function(result) {
-                      alert(result.success);
-                      // Lakukan tindakan setelah penghapusan (misalnya, hapus elemen dari DOM)
-                  },
-                  error: function(xhr, status, error) {
-                      alert('Terjadi kesalahan: ' + xhr.responseJSON.error);
-                  }
-              });
-          }
-      }
-  </script>
+
   <!-- Plugins and scripts required by this view-->
   <script src="vendors/chart.js/js/chart.umd.js"></script>
   <script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>

@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
         
         Route::get('/input-data', [Controllers\InputNilaiCont::class, 'index'])->name('input-data.index');
         Route::put('/input-data', [Controllers\InputNilaiCont::class, 'update'])->name('input-data.update');
-        Route::delete('/input-data/{filename}', [Controllers\InputNilaiCont::class, 'delete'])->name('input-data.delete');
+        Route::delete('/input-data/{filename}', [Controllers\InputNilaiCont::class, 'destroy'])->name('input-data.destroy');
         
         
         

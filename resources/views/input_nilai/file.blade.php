@@ -11,12 +11,16 @@
              <div class="col-md-12">
                  <div class="card">
                      <div class="card-header text-right" data-coreui-i18n="trafficAndSales">
-                         {{-- <form action="{{ route('input-data.delete', ['filename' => $lampiran->lampiran]) }}"
-                             method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus file ini?');">
-                             @csrf
-                             @method('DELETE')
-                             <button type="submit" class="btn btn-sm btn-warning"> Hapus Lampiran</button>
-                         </form> --}}
+                         @if ($lampiran && $lampiran->lampiran)
+                             <form method="POST"
+                                 action="{{ route('input-data.destroy', ['filename' => $lampiran->lampiran]) }}">
+                                 @csrf
+                                 @method('DELETE') <button type="submit" class="btn btn-sm btn-warning"> Hapus
+                                     Lampiran</button>
+                             </form>
+                         @else
+                         @endif
+
                      </div>
                      <div class="card-body">
                          <div class="mb-3">

@@ -19,6 +19,7 @@ class InputNilai extends Model
         'evaluator_name',
         'evaluator_notes',
         'score',
+        'lampiran',
       
     ];
 
