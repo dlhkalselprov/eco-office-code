@@ -56,7 +56,7 @@ class InputNilaiCont extends Controller
         }
 
         $request->validate([
-            'lampiran' => 'nullable|mimes:pdf,doc,docx,xls,xlsx|',
+            'lampiran' => 'nullable|mimes:pdf,doc,docx,xls,xlsx|max:30000',
           
         ]);
 
