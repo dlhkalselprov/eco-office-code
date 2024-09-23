@@ -41,6 +41,9 @@ Route::middleware('auth')->group(function () {
  
     Route::middleware('role:user')->group(function () {
         Route::get('/', [Controllers\UserController::class, 'index'])->name('user.index');
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
         
         Route::get('/profile-user', [Controllers\ProfileController::class, 'index'])->name('profile-user.index');
         Route::get('/profile-edit', [Controllers\ProfileController::class, 'edit'])->name('profile-edit.edit');
