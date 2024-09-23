@@ -3,7 +3,7 @@
 
     <x-slot name="header">Halaman Dashboard</x-slot>
     <x-slot name="sidebar">
-        @include('layouts.sidebar')
+        @include('user.sidebar')
     </x-slot>
     <x-slot name="breadcrum">
         <li class="breadcrumb-item"><a href="#" data-coreui-i18n="home">Home</a>
