@@ -54,6 +54,9 @@ Route::middleware('auth')->group(function () {
         Route::put('/input-data', [Controllers\InputNilaiCont::class, 'update'])->name('input-data.update');
         Route::delete('/input-data/{filename}', [Controllers\InputNilaiCont::class, 'destroy'])->name('input-data.destroy');
         
+        Route::get('/hasil-penilaian',function () {
+            return view('hasil.index');
+        })->name('hasil-penilaian.index');
         
         
     });
