@@ -33,21 +33,22 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!-- Scripts -->
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <!-- Vendors styles-->
-    <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
+    {{-- <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css"> --}}
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
-    <link href="css/examples.css" rel="stylesheet">
-    <script src="js/config.js"></script>
-    <script src="js/color-modes.js"></script>
+    {{-- <link href="css/examples.css" rel="stylesheet"> --}}
+    {{-- <script src="js/config.js"></script> --}}
+    {{-- <script src="js/color-modes.js"></script> --}}
     {{-- <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet"> --}}
-    <link href="vendors/@coreui/icons/css/free.min.css" rel="stylesheet">
+    {{-- <link href="vendors/@coreui/icons/css/free.min.css" rel="stylesheet"> --}}
 
-    <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+
 </head>
 
 <body>
@@ -109,7 +110,7 @@
 
     @include('layouts.script')
     @notifyJs
-
+    @stack('scripts')
 </body>
 
 </html>

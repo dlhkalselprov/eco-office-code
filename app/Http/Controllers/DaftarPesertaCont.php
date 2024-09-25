@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DataTables\UsersDataTable;
 
 class DaftarPesertaCont extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(UsersDataTable $dataTable)
     {
-        return view('daftar.index');
-        
+        return $dataTable->render('daftar.index');
     }
 
     /**

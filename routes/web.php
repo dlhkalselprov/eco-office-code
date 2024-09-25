@@ -2,9 +2,11 @@
 
 
 use App\Http\Controllers;
-use App\Http\Middleware\HasRoleAdminMiddleware;
+// use App\Http\Middleware\HasRoleAdminMiddleware;
+use App\Http\Middleware\RoleAdminMiddleware;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -16,31 +18,62 @@ Route::middleware('auth')->group(function () {
     // Route::get('/', function () {
     //     return view('layouts.template');
     // });
+    Route::get('/', function () {
+        $user = Auth::user();
+        $role = ($user->roles()->first())->name;
+    
+        // Jika pengguna belum login, arahkan ke halaman login
+        if (!$user) {
+            return redirect('/login');
+        }
+        // Cek role pengguna dan arahkan ke dashboard yang sesuai
+        if ($role === 'admin') {
+            return redirect('/admin-dashboard');
+        } elseif ($role === 'user') {
+            return redirect('/user-dashboard');
+        }
+    
+        // Jika role tidak dikenal, arahkan ke halaman home atau error
+        return redirect('404');
 
-    Route::middleware('role:superadmin')->group(function () {
-    
-    });
-    
-    Route::middleware('role:admin')->group(function () {
-
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
-    
-        Route::get('/profile', [Controllers\ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
-    
-        Route::resource('daftar-peserta', Controllers\DaftarPesertaCont::class);
-        Route::resource('proses-penilaian', Controllers\ProsesPenilaianCont::class);
-        Route::resource('hasil-penilaian', Controllers\HasilPenilaianCont::class);
         
+    })->name('home');
+    
+    Route::middleware(['role:superadmin'])->group(function () {
+    
     });
-
+    
+    Route::middleware(['role:admin'])->group(function () {
+        
+    // Route::get('/', [Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('/admin-dashboard', function () {
+        $user = DB::table('users')
+        ->join('user_role', 'users.id', '=', 'user_role.user_id')
+        ->where('user_role.role_id', '3')
+        ->count();
+        return view('admin.dashboard', compact('user'));
+    })->name('dashboard.admin');
+    
    
- 
-    Route::middleware('role:user')->group(function () {
-        Route::get('/', [Controllers\UserController::class, 'index'])->name('user.index');
+    
+    Route::get('/profile', [Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::resource('daftar-peserta', Controllers\DaftarPesertaCont::class);
+    
+    Route::resource('proses-penilaian', Controllers\ProsesPenilaianCont::class);
+    Route::resource('hasil-penilaian-admin', Controllers\HasilPenilaianCont::class);
+    
+});
+
+
+
+Route::middleware(['role:user'])->group(function () {
+    // Route::get('/', [Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('/user-dashboard', function () {
+            return view('user.dashboard');
+        });
         Route::get('/dashboard', function () {
             return view('user.dashboard');
         })->name('dashboard');
