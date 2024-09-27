@@ -49,13 +49,13 @@ class ProsesPenilaianCont extends Controller
        
             // Ambil user berdasarkan ID
             $data = InputNilai::where('user_id', $id_user)->first();
-         
+            $user = User::where('id', $id_user)->first();
             
             $score = json_decode($data->score);
             $lampiran = InputNilai::firstOrNew(['user_id' => $id_user]);
             // dd($lampiran);
             // Menampilkan view dengan detail user
-            return view('proses.show', compact('data','score','lampiran'));
+            return view('proses.show', compact('data','score','lampiran','user'));
 
         } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
             // Jika terjadi kesalahan saat dekripsi, kamu bisa mengarahkan ke halaman error atau menampilkan pesan

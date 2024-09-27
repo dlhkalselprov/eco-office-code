@@ -27,7 +27,7 @@
                         <h5 class="text-body-secondary text-center"><strong>INDIKATOR PENILAIAN PERKANTORAN RAMAH
                                 LINGKUNGAN LINGKUP INSTANSI DAERAH PROVINSI KALIMANTAN SELATAN</strong></h5>
                         <hr>
-                        <h6>Nama Instansi : </h6>
+                        <h6>Nama Instansi : <strong> {{ $user->nama_instansi }}</strong></h6>
 
 
                         <div class="accordion mt-3" id="accordionExample">
