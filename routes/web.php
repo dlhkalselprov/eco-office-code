@@ -28,9 +28,13 @@ Route::middleware('auth')->group(function () {
         }
         // Cek role pengguna dan arahkan ke dashboard yang sesuai
         if ($role === 'admin') {
-            return redirect('/admin-dashboard');
+            $user = DB::table('users')
+            ->join('user_role', 'users.id', '=', 'user_role.user_id')
+            ->where('user_role.role_id', '3')
+            ->count();
+            return view('admin.dashboard', compact('user'));
         } elseif ($role === 'user') {
-            return redirect('/user-dashboard');
+            return view('user.dashboard');
         }
     
         // Jika role tidak dikenal, arahkan ke halaman home atau error
@@ -56,13 +60,15 @@ Route::middleware('auth')->group(function () {
     
    
     
+
     Route::get('/profile', [Controllers\ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::resource('daftar-peserta', Controllers\DaftarPesertaCont::class);
-    
-    Route::resource('proses-penilaian', Controllers\ProsesPenilaianCont::class);
+    Route::get('proses-penilaian',  [Controllers\ProsesPenilaianCont::class,'index'])->name('proses-penilaian.index'); 
+    Route::get('proses-penilaian/{id}',  [Controllers\ProsesPenilaianCont::class,'show'])->name('proses-penilaian.show'); 
+    // Route::resource('proses-penilaian', Controllers\ProsesPenilaianCont::class);
     Route::resource('hasil-penilaian-admin', Controllers\HasilPenilaianCont::class);
     
 });

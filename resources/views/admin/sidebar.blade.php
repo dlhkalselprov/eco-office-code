@@ -1,10 +1,11 @@
 <div class="sidebar-header border-bottom">
     <div class="sidebar-brand">
         <div class="sidebar-brand-full">
-            <img src="assets/brand/eco.png" class="img-thumbnail" style="max-width:100% ; height:auto;">
+            <img src="{{ asset('assets/brand/eco.png') }} class="img-thumbnail" style="max-width:100% ; height:auto;">
         </div>
         <div class="sidebar-brand-narrow" width="32" height="32">
-            <img src="assets/brand/eco-office.png" class="img-thumbnail" style="max-width:100% ; height:auto;">
+            <img src="{{ asset('assets/brand/eco-office.png') }} class="img-thumbnail"
+                style="max-width:100% ; height:auto;">
 
         </div>
     </div>
@@ -16,9 +17,10 @@
 
         <x-nav-link :href="route('dashboard.admin')" :active="request()->routeIs('dashboard')">
             <svg class="nav-icon">
-                <use href="node_modules/@coreui/icons/sprites/free.svg#cil-speedometer"></use>
+                <use href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-speedometer') }}"></use>
             </svg>
-            <span data-coreui-i18n="dashboard">Dashboard</span>
+            <span data-coreui-i18n="dashboard">
+                Dashboard</span>
         </x-nav-link>
 
 
@@ -27,25 +29,28 @@
     <li class="nav-item">
         <x-nav-link :href="route('daftar-peserta.index')" :active="request()->routeIs('daftar-peserta.index')">
             <svg class="nav-icon">
-                <use href="node_modules/@coreui/icons/sprites/free.svg#cil-people"></use>
+                <use href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-people') }}"></use>
             </svg>
-            <span data-coreui-i18n="colors">Daftar Peserta</span>
+            <span data-coreui-i18n="colors">
+                Daftar Peserta</span>
         </x-nav-link>
     </li>
     <li class="nav-item">
         <x-nav-link :href="route('proses-penilaian.index')" :active="request()->routeIs('proses-penilaian.index')">
             <svg class="nav-icon">
-                <use href="node_modules/@coreui/icons/sprites/free.svg#cil-pencil"></use>
+                <use href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-pencil') }}"></use>
             </svg>
-            <span data-coreui-i18n="typography">Proses Penilaian</span>
+            <span data-coreui-i18n="typography">
+                Proses Penilaian</span>
         </x-nav-link>
     </li>
     <li class="nav-item">
         <x-nav-link :href="route('hasil-penilaian-admin.index')" :active="request()->routeIs('hasil-penilaian.index')">
             <svg class="nav-icon">
-                <use href="node_modules/@coreui/icons/sprites/free.svg#cil-list-numbered-rtl"></use>
+                <use href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-list-numbered-rtl') }}"></use>
             </svg>
-            <span data-coreui-i18n="typography">Hasil Penilaian</span>
+            <span data-coreui-i18n="typography">
+                Hasil Penilaian</span>
         </x-nav-link>
     </li>
 

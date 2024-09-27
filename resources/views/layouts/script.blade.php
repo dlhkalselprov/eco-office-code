@@ -18,6 +18,9 @@
       });
   </script>
 
+  @stack('scripts')
+  {{ $costum_js ?? '' }}
+
   <!-- Plugins and scripts required by this view-->
   {{-- <script src="vendors/chart.js/js/chart.umd.js"></script> --}}
   {{-- <script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script> --}}

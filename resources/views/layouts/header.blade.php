@@ -3,7 +3,7 @@
         onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"
         style="margin-inline-start: -14px">
         <svg class="icon icon-lg">
-            <use href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+            <use href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-menu') }}"></use>
         </svg>
     </button>
     <ul class="header-nav d-none d-md-flex">
@@ -32,7 +32,7 @@
 
                     <a class="dropdown-item" href="{{ route('profile-user.index') }}">
                         <svg class="icon me-2">
-                            <use href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                            <use href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-user') }}"></use>
                         </svg><span data-coreui-i18n="profile">Profile</span>
                     </a>
 
@@ -45,7 +45,8 @@
                             onclick="event.preventDefault();
                     this.closest('form').submit();">
                             <svg class="icon me-2">
-                                <use href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout">
+                                <use
+                                    href="{{ asset('node_modules/@coreui/icons/sprites/free.svg#cil-account-logout') }}">
                                 </use>
                             </svg><span data-coreui-i18n="logout">Logout</span>
                         </a>

@@ -76,5 +76,9 @@ class User extends Authenticatable
     {
         return $this->roles()->where('name', $role)->exists();
     }
+
+    public function score(){
+        return $this->belongsToMany(InputNilai::class, 'nilai');
+    }
     
 }
